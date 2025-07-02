@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct spotifyCloneApp: App {
-    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.scenePhase) private var scenePhase // looking app life cycle (foreground, background)
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()  // place where define the principal window
         }
         .onChange(of: scenePhase){
             switch scenePhase {
@@ -28,3 +28,5 @@ struct spotifyCloneApp: App {
         }
     }
 }
+
+//all logs works 
