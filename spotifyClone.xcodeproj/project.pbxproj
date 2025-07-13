@@ -22,6 +22,10 @@
 		4F42D9DC2E137D620081F4AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F42D9DB2E137D620081F4AA /* HomeView.swift */; };
 		4F42D9DE2E1399F20081F4AA /* iconlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F42D9DD2E1399F10081F4AA /* iconlogo.png */; };
 		4F6B5EE02E14C3BF00DA6534 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B5EDF2E14C3BF00DA6534 /* HomeViewModel.swift */; };
+		4FBC9FD42E2202CB006D11EA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD32E2202CB006D11EA /* Song.swift */; };
+		4FBC9FD62E2202F0006D11EA /* SongRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */; };
+		4FBC9FD92E220407006D11EA /* FetchSongsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */; };
+		4FBC9FDC2E220982006D11EA /* SongRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FDB2E220982006D11EA /* SongRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		4F42D9DB2E137D620081F4AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F42D9DD2E1399F10081F4AA /* iconlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconlogo.png; path = ../../../../../../../Downloads/iconlogo.png; sourceTree = "<group>"; };
 		4F6B5EDF2E14C3BF00DA6534 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4FBC9FD32E2202CB006D11EA /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepositoryImpl.swift; sourceTree = "<group>"; };
+		4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongsUseCase.swift; sourceTree = "<group>"; };
+		4FBC9FDB2E220982006D11EA /* SongRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,7 @@
 		4F42D9C62E1195A20081F4AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4FBC9FD12E21FF6F006D11EA /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -190,6 +199,9 @@
 		4F42D9C72E1195B60081F4AA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4FBC9FDA2E2207DC006D11EA /* Repositories */,
+				4FBC9FD72E22031A006D11EA /* UseCases */,
+				4FBC9FD22E2202AB006D11EA /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -261,6 +273,38 @@
 			children = (
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4FBC9FD12E21FF6F006D11EA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4FBC9FD22E2202AB006D11EA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4FBC9FD32E2202CB006D11EA /* Song.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4FBC9FD72E22031A006D11EA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		4FBC9FDA2E2207DC006D11EA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4FBC9FDB2E220982006D11EA /* SongRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,10 +439,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FBC9FD42E2202CB006D11EA /* Song.swift in Sources */,
 				4F42D9D42E137A130081F4AA /* AppDelegate.swift in Sources */,
+				4FBC9FDC2E220982006D11EA /* SongRepository.swift in Sources */,
 				4F6B5EE02E14C3BF00DA6534 /* HomeViewModel.swift in Sources */,
 				4F42D9D62E137A290081F4AA /* SceneDelegate.swift in Sources */,
+				4FBC9FD62E2202F0006D11EA /* SongRepositoryImpl.swift in Sources */,
 				4F42D9CD2E119D750081F4AA /* ConsoleLogger.swift in Sources */,
+				4FBC9FD92E220407006D11EA /* FetchSongsUseCase.swift in Sources */,
 				4F02C3DC2E03052600594AC4 /* spotifyCloneApp.swift in Sources */,
 				4F42D9DC2E137D620081F4AA /* HomeView.swift in Sources */,
 				4F42D9CF2E119D910081F4AA /* LoggerEnvironment.swift in Sources */,

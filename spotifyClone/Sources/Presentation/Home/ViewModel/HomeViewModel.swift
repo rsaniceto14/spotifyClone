@@ -11,32 +11,40 @@ import Combine
 final class HomeViewModel: ObservableObject{
     //    mark: - Public Properties
     
-    @Published var songs: [String] = [] // mock - musics string list
+    @Published var songs: [Song] = [] // mock - musics string list
+    @Published var isLoading: Bool = false
+    
+    
     
     // mark - Private
     
+    private let fetchSongsUseCase: FetchSongsUseCase
     private let logger: LoggerService
     
     //    mark - Initializers
     
-    init(logger: LoggerService = LoggerEnvironment.logger) {
-        self.logger = logger
-        logger.log("HomeViewModel initialized")
-        fetchMockData()
+    init(
+        fetchSongsUseCase: FetchSongsUseCase = FetchSongsUseCase(repository: SongRepositoryImpl()),
+        logger: LoggerService = LoggerEnvironment.logger) {
+            self.fetchSongsUseCase = fetchSongsUseCase
+            self.logger = logger
+            logger.log("HomeViewModel initialized")
+            Task {
+                await fetchData()
+            }
     }
     
     //    mark - mocked fetch
     
-    private func fetchMockData(){
-        //        use case calling future
-        
-        songs = [
-            "Bohemian Rhapsody – Queen",
-            "Blinding Lights – The Weeknd",
-            "Shape of You – Ed Sheeran",
-            "Take on Me – A-ha",
-            "Smells Like Teen Spirit – Nirvana"
-        ]
-        logger.log("Loaded mock songs: \(songs.count) items")
+    private func fetchData() async {
+    isLoading = true
+        do {
+            let result = try await fetchSongsUseCase.execute()
+            songs = result
+            logger.log("Loaded \(result.count) songs")
+        } catch {
+            logger.error("Failed to fetch songs: \(error)")
+        }
+        isLoading = false
     }
 }

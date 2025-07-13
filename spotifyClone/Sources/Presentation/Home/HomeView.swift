@@ -13,9 +13,23 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView{
-            List(viewModel.songs, id: \.self) { song in
-                Text(song)
-                    .padding(.vertical, 8)
+            Group {
+                if viewModel.isLoading {
+                    ProgressView("Carregando músicas")
+                } else {
+                    List(viewModel.songs) {
+                        song in
+                        VStack(alignment: .leading) {
+                            Text(song.title)
+                                .font(.headline)
+                            Text(song.artist)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                            .padding(.vertical, 8)
+                        
+                    }
+                }
             }
             .navigationTitle("Spotify Clone")
             
