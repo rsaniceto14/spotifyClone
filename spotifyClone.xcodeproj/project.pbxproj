@@ -22,6 +22,8 @@
 		4F42D9DC2E137D620081F4AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F42D9DB2E137D620081F4AA /* HomeView.swift */; };
 		4F42D9DE2E1399F20081F4AA /* iconlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F42D9DD2E1399F10081F4AA /* iconlogo.png */; };
 		4F6B5EE02E14C3BF00DA6534 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B5EDF2E14C3BF00DA6534 /* HomeViewModel.swift */; };
+		4F93C37C2E2476520007FCD5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C37B2E2476520007FCD5 /* AppCoordinator.swift */; };
+		4F93C37E2E2476740007FCD5 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C37D2E2476740007FCD5 /* CoordinatorProtocol.swift */; };
 		4FBC9FD42E2202CB006D11EA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD32E2202CB006D11EA /* Song.swift */; };
 		4FBC9FD62E2202F0006D11EA /* SongRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */; };
 		4FBC9FD92E220407006D11EA /* FetchSongsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */; };
@@ -64,6 +66,8 @@
 		4F42D9DB2E137D620081F4AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F42D9DD2E1399F10081F4AA /* iconlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconlogo.png; path = ../../../../../../../Downloads/iconlogo.png; sourceTree = "<group>"; };
 		4F6B5EDF2E14C3BF00DA6534 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4F93C37B2E2476520007FCD5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4F93C37D2E2476740007FCD5 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		4FBC9FD32E2202CB006D11EA /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepositoryImpl.swift; sourceTree = "<group>"; };
 		4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongsUseCase.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 		4F42D9DA2E137A660081F4AA /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				4F93C37B2E2476520007FCD5 /* AppCoordinator.swift */,
+				4F93C37D2E2476740007FCD5 /* CoordinatorProtocol.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -439,8 +445,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F93C37E2E2476740007FCD5 /* CoordinatorProtocol.swift in Sources */,
 				4FBC9FD42E2202CB006D11EA /* Song.swift in Sources */,
 				4F42D9D42E137A130081F4AA /* AppDelegate.swift in Sources */,
+				4F93C37C2E2476520007FCD5 /* AppCoordinator.swift in Sources */,
 				4FBC9FDC2E220982006D11EA /* SongRepository.swift in Sources */,
 				4F6B5EE02E14C3BF00DA6534 /* HomeViewModel.swift in Sources */,
 				4F42D9D62E137A290081F4AA /* SceneDelegate.swift in Sources */,

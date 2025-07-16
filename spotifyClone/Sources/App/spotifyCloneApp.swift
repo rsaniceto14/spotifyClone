@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct spotifyCloneApp: App {
     @Environment(\.scenePhase) private var scenePhase // looking app life cycle (foreground, background)
+    @StateObject private var coordinator = AppCoordinator()
     
     var body: some Scene {
         WindowGroup {
-            HomeView()  // place where define the principal window
+            coordinator.rootView  // place where define the principal window
         }
         .onChange(of: scenePhase){
             switch scenePhase {
@@ -23,7 +24,8 @@ struct spotifyCloneApp: App {
                 LoggerEnvironment.logger.warning("App became Inactive")
             case .background:
                 LoggerEnvironment.logger.log("App moved to background")
-            default: break
+            @unknown default:
+                LoggerEnvironment.logger.warning("Unknown scene phase")
             }
         }
     }

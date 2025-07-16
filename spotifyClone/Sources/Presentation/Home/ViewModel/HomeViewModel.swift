@@ -13,6 +13,7 @@ final class HomeViewModel: ObservableObject{
     
     @Published var songs: [Song] = [] // mock - musics string list
     @Published var isLoading: Bool = false
+    @Published var selectedSong: Song?
     
     
     
@@ -43,7 +44,7 @@ final class HomeViewModel: ObservableObject{
             songs = result
             logger.log("Loaded \(result.count) songs")
         } catch {
-            logger.error("Failed to fetch songs: \(error)")
+            logger.error("❌ Failed to fetch songs: \(String(describing: error))")
         }
         isLoading = false
     }
