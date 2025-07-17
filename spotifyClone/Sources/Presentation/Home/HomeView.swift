@@ -4,7 +4,7 @@
 //
 //  Created by Raphael Aniceto on 30/06/25.
 //
-
+import Foundation
 import SwiftUI
 
 struct HomeView: View {
@@ -12,38 +12,31 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $viewModel.path) {
             Group {
                 if viewModel.isLoading {
                     ProgressView("Carregando músicas")
-                        .progressViewStyle(CircularProgressViewStyle())
+                        .progressViewStyle(CircularProgressViewStyle(tint: .green))
+                        .scaleEffect(1.5)
                 } else {
                     List(viewModel.songs) {
                         song in
-                        Button {
-                            viewModel.selectedSong = song
-                        } label: {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(song.title)
-                                    .font(.headline)
-                                Text(song.artist)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
+                        SongRow(song: song)
+                            .listRowSeparator(.hidden)
+                            .onTapGesture{
+                                viewModel.path.append(song)
                             }
-                            .padding(.vertical, 6)
-                        }
                     }
+                    
                     .listStyle(.plain)
+                    
                 }
             }
-            .navigationTitle("Spotify Clone")
-            .navigationDestination(item: $viewModel.selectedSong) {song in
-                Text("Detalhes da musica: \(song.title)")
+            .navigationTitle("Explorar")
+            .navigationDestination(for: Song.self) { song in
+                SongDetailView(song: song)
             }
-            
-        }
-        .onAppear{
-            LoggerEnvironment.logger.log("start view")
         }
     }
 }
+

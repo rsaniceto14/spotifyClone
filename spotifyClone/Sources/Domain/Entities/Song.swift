@@ -11,4 +11,5 @@ struct Song: Identifiable, Equatable, Hashable {
     let id: String
     let title: String
     let artist: String
+    let artworkUrl: String?
 }

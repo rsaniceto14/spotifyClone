@@ -7,13 +7,15 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class HomeViewModel: ObservableObject{
     //    mark: - Public Properties
-    
+    @Published var path = NavigationPath()
     @Published var songs: [Song] = [] // mock - musics string list
     @Published var isLoading: Bool = false
     @Published var selectedSong: Song?
+    
     
     
     

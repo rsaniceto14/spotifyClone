@@ -10,15 +10,18 @@ import Foundation
 
 final class SongRepositoryImpl: SongRepository {
     
+    private let client = NetworkClient()
+    
     func fetchSongs() async throws -> [Song]{
-        try await Task.sleep(nanoseconds: 500_000_000) //simula delay de rede
+        let query = "50cent"
+        let urlString = "https://itunes.apple.com/search?term=\(query)&media=music&limit=20"
         
-        return [
-            Song(id: UUID().uuidString, title: "Bohemian Rhapsody", artist: "Queen"),
-            Song(id: UUID().uuidString, title: "Shape of You", artist: "Ed Sheeeran"),
-            Song(id: UUID().uuidString, title: "Smells Like Tenn Spirit", artist: "Nirvana"),
-            Song(id: UUID().uuidString, title: "Blinding Lights", artist: "The Weeknd"),
-            Song(id: UUID().uuidString, title: "Imagine", artist: "John Lennon"),
-        ]
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+        
+        let response: SongResponseDTO = try await client.get(url: url)
+        let songs = response.results.map(SongMapper.map)
+        return songs
     }
 }
