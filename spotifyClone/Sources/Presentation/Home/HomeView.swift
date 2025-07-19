@@ -14,15 +14,11 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $viewModel.path) {
             VStack{
-                TextField("What do you want to listen to?", text: $viewModel.searchTerm)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                    .padding(.top)
-                    .onSubmit {
-                        Task{
-                            await viewModel.fetchData()
-                        }
+                SearchBarView(text: $viewModel.searchTerm) {
+                    Task {
+                        await viewModel.fetchData()
                     }
+                }
             }
             Group {
                 if viewModel.isLoading {
