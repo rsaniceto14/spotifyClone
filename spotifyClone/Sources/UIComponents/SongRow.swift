@@ -11,31 +11,33 @@ import SwiftUI
 struct SongRow: View {
     let song: Song
     
+    @ObservedObject private var imageLoader = ImageLoader()
+    
     var body: some View {
-        HStackLayout(alignment: .center, spacing: 16) {
-            AsyncImage(url: URL(string: song.artworkUrl ?? "")) {
-                phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .frame(width: 60, height: 60)
-                case .success(let image):
-                    image
+        HStack(alignment: .center, spacing: 16){
+                if let image = imageLoader.image{
+                    Image(uiImage: image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 60, height: 60)
                         .cornerRadius(8)
                         .shadow(radius: 4)
-                case .failure:
-                    Image(systemName: "music.note")
-                        .frame(width: 60, height: 60)
-                        .foregroundColor(.gray)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
-                @unknown default:
-                    EmptyView()
+                    
+                } else {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(width: 60, height: 60)
+                        
+                        if imageLoader.isLoading{
+                            ProgressView()
+                        } else {
+                            Image(systemName: "music.note")
+                                .foregroundColor(.gray)
+                        }
+                    }
                 }
-            }
+            
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(song.title)
@@ -50,5 +52,13 @@ struct SongRow: View {
             Spacer()
         }
         .padding(.vertical, 8)
+        .onAppear{
+            if let urlString = song.artworkUrl,
+               let url = URL(string: urlString) {
+                Task {
+                 await imageLoader.loadImage(from: url)
+                }
+            }
+        }
     }
 }
