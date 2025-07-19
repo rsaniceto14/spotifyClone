@@ -12,8 +12,12 @@ final class SongRepositoryImpl: SongRepository {
     
     private let client = NetworkClient()
     
-    func fetchSongs() async throws -> [Song]{
-        let query = "50cent"
+    func fetchSongs(term: String) async throws -> [Song]{
+       guard let query = term.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw URLError(.badURL)
+        }
+        
+        
         let urlString = "https://itunes.apple.com/search?term=\(query)&media=music&limit=20"
         
         guard let url = URL(string: urlString) else {

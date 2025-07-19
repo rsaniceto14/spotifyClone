@@ -16,12 +16,12 @@ struct SongDetailView: View {
                 switch phase {
                 case .empty:
                     ProgressView()
-                        .frame(width: 200, height: 200)
+                        .frame(width: 100, height: 100)
                 case .success(let image):
                     image
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: 300)
+                        .frame(maxWidth: 200)
                         .cornerRadius(16)
                         .shadow(radius: 10)
                 case .failure:

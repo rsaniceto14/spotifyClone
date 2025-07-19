@@ -13,6 +13,17 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack(path: $viewModel.path) {
+            VStack{
+                TextField("What do you want to listen to?", text: $viewModel.searchTerm)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+                    .padding(.top)
+                    .onSubmit {
+                        Task{
+                            await viewModel.fetchData()
+                        }
+                    }
+            }
             Group {
                 if viewModel.isLoading {
                     ProgressView("Carregando músicas")
@@ -29,12 +40,20 @@ struct HomeView: View {
                     }
                     
                     .listStyle(.plain)
+                    .refreshable{
+                        await viewModel.refreshSongs()
+                    }
                     
                 }
             }
             .navigationTitle("Explorar")
             .navigationDestination(for: Song.self) { song in
                 SongDetailView(song: song)
+            }
+            .onAppear{
+                Task{
+                    await viewModel.fetchData()
+                }
             }
         }
     }

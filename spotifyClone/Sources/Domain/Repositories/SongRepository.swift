@@ -10,5 +10,5 @@ import Foundation
 //interface que define o que o repositorio precisa entregar (camada Presentation e UseCase nao sabem se o dados vem de api,banco ou mock
 
 protocol SongRepository{
-    func fetchSongs() async throws -> [Song]
+    func fetchSongs(term: String) async throws -> [Song]
 }

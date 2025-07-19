@@ -15,7 +15,7 @@ final class FetchSongsUseCase {
         self.repository = repository
     }
     
-    func execute() async throws -> [Song] {
-        return try await repository.fetchSongs()
+    func execute(term: String) async throws -> [Song] {
+        return try await repository.fetchSongs(term: term)
     }
 }
