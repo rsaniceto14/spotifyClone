@@ -14,7 +14,7 @@ struct spotifyCloneApp: App {
     
     var body: some Scene {
         WindowGroup {
-            coordinator.rootView  // place where define the principal window
+            SplashView()  // place where define the principal window
         }
         .onChange(of: scenePhase){
             switch scenePhase {

@@ -15,8 +15,6 @@ final class ImageLoader: ObservableObject {
     @Published var image: UIImage?
     @Published var isLoading: Bool = false
     
-    private var cancellable: AnyCancellable?
-    
     func loadImage(from url: URL) async {
         if let cached = ImageCache.shared.image(for: url) {
             self.image = cached

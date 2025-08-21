@@ -13,7 +13,8 @@ enum SongMapper {
             id: String(dto.trackId),
             title: (dto.trackName),
             artist: (dto.artistName),
-            artworkUrl: (dto.artworkUrl100)
+            artworkUrl: (dto.artworkUrl100),
+            previewUrl: (dto.previewUrl)
         )
     }
 }

@@ -16,4 +16,5 @@ struct SongDTO: Decodable {
     let trackName: String
     let artistName: String
     let artworkUrl100: String?
+    let previewUrl: String?
 }

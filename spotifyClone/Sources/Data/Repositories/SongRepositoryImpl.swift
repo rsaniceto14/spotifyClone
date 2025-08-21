@@ -10,10 +10,17 @@ import Foundation
 
 final class SongRepositoryImpl: SongRepository {
     
+    
+    
     private let client = NetworkClient()
     
     func fetchSongs(term: String) async throws -> [Song]{
-       guard let query = term.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+        let trimmed = term.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else {
+            throw URLError(.badURL)
+        }
+        
+        guard let query = term.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             throw URLError(.badURL)
         }
         
@@ -28,4 +35,7 @@ final class SongRepositoryImpl: SongRepository {
         let songs = response.results.map(SongMapper.map)
         return songs
     }
+    
 }
+
+

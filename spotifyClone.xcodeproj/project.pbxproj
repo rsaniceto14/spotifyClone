@@ -21,7 +21,10 @@
 		4F42D9D62E137A290081F4AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F42D9D52E137A290081F4AA /* SceneDelegate.swift */; };
 		4F42D9DC2E137D620081F4AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F42D9DB2E137D620081F4AA /* HomeView.swift */; };
 		4F42D9DE2E1399F20081F4AA /* iconlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F42D9DD2E1399F10081F4AA /* iconlogo.png */; };
+		4F56129D2E31A06600E88792 /* SongSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56129C2E31A06600E88792 /* SongSectionView.swift */; };
+		4F56129F2E31A16500E88792 /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56129E2E31A16500E88792 /* InitialViewModel.swift */; };
 		4F6B5EE02E14C3BF00DA6534 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B5EDF2E14C3BF00DA6534 /* HomeViewModel.swift */; };
+		4F8FBD412E4B79DA0048C514 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8FBD402E4B79DA0048C514 /* AudioPlayerManager.swift */; };
 		4F93C37C2E2476520007FCD5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C37B2E2476520007FCD5 /* AppCoordinator.swift */; };
 		4F93C37E2E2476740007FCD5 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C37D2E2476740007FCD5 /* CoordinatorProtocol.swift */; };
 		4FB185D12E27681800B1A36B /* SongResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB185D02E27681800B1A36B /* SongResponseDTO.swift */; };
@@ -36,6 +39,10 @@
 		4FBC9FD62E2202F0006D11EA /* SongRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */; };
 		4FBC9FD92E220407006D11EA /* FetchSongsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */; };
 		4FBC9FDC2E220982006D11EA /* SongRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC9FDB2E220982006D11EA /* SongRepository.swift */; };
+		4FBCB8352E2C66D100248F89 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCB8342E2C66D100248F89 /* SplashView.swift */; };
+		4FBCB8382E2C6A5100248F89 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCB8372E2C6A5100248F89 /* InitialView.swift */; };
+		4FBCB83A2E2C6A9400248F89 /* RecentSearchStorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCB8392E2C6A9400248F89 /* RecentSearchStorie.swift */; };
+		4FBCB83F2E2E5CBF00248F89 /* SongCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCB83E2E2E5CBF00248F89 /* SongCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +80,10 @@
 		4F42D9D52E137A290081F4AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4F42D9DB2E137D620081F4AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F42D9DD2E1399F10081F4AA /* iconlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconlogo.png; path = ../../../../../../../Downloads/iconlogo.png; sourceTree = "<group>"; };
+		4F56129C2E31A06600E88792 /* SongSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionView.swift; sourceTree = "<group>"; };
+		4F56129E2E31A16500E88792 /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
 		4F6B5EDF2E14C3BF00DA6534 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4F8FBD402E4B79DA0048C514 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		4F93C37B2E2476520007FCD5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4F93C37D2E2476740007FCD5 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		4FB185D02E27681800B1A36B /* SongResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResponseDTO.swift; sourceTree = "<group>"; };
@@ -88,6 +98,11 @@
 		4FBC9FD52E2202F0006D11EA /* SongRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepositoryImpl.swift; sourceTree = "<group>"; };
 		4FBC9FD82E220407006D11EA /* FetchSongsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongsUseCase.swift; sourceTree = "<group>"; };
 		4FBC9FDB2E220982006D11EA /* SongRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepository.swift; sourceTree = "<group>"; };
+		4FBCB8342E2C66D100248F89 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		4FBCB8372E2C6A5100248F89 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		4FBCB8392E2C6A9400248F89 /* RecentSearchStorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchStorie.swift; sourceTree = "<group>"; };
+		4FBCB83E2E2E5CBF00248F89 /* SongCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCard.swift; sourceTree = "<group>"; };
+		4FCD842B2E31DEDC0086764C /* app_logo_splash */ = {isa = PBXFileReference; lastKnownFileType = file; name = app_logo_splash; path = ../../app_logo_splash; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +157,7 @@
 				4F02C3DF2E03053000594AC4 /* Assets.xcassets */,
 				4F1537772E13A3DC00902ABD /* spotify-logo-png-spotify-music-app-icon-1024.jpg */,
 				4F42D9DD2E1399F10081F4AA /* iconlogo.png */,
+				4FCD842B2E31DEDC0086764C /* app_logo_splash */,
 				4F02C3E12E03053000594AC4 /* Preview Content */,
 			);
 			path = spotifyClone;
@@ -207,6 +223,9 @@
 			children = (
 				4FB195EB2E28B7260020B0DD /* SongRow.swift */,
 				4FB91C642E2B699500A1B613 /* SearchBarView.swift */,
+				4FBCB83E2E2E5CBF00248F89 /* SongCard.swift */,
+				4F56129C2E31A06600E88792 /* SongSectionView.swift */,
+				4F8FBD402E4B79DA0048C514 /* AudioPlayerManager.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -235,6 +254,8 @@
 		4F42D9C82E1195C20081F4AA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				4FBCB8362E2C6A2700248F89 /* Initial */,
+				4FBCB8332E2C669300248F89 /* Splash */,
 				4F42D9D72E137A440081F4AA /* Home */,
 			);
 			path = Presentation;
@@ -359,6 +380,24 @@
 				4FBC9FDB2E220982006D11EA /* SongRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4FBCB8332E2C669300248F89 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCB8342E2C66D100248F89 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		4FBCB8362E2C6A2700248F89 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCB8372E2C6A5100248F89 /* InitialView.swift */,
+				4FBCB8392E2C6A9400248F89 /* RecentSearchStorie.swift */,
+				4F56129E2E31A16500E88792 /* InitialViewModel.swift */,
+			);
+			path = Initial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,22 +533,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FB91C652E2B699500A1B613 /* SearchBarView.swift in Sources */,
+				4FBCB8382E2C6A5100248F89 /* InitialView.swift in Sources */,
 				4F93C37E2E2476740007FCD5 /* CoordinatorProtocol.swift in Sources */,
 				4FB195EC2E28B7260020B0DD /* SongRow.swift in Sources */,
 				4FBC9FD42E2202CB006D11EA /* Song.swift in Sources */,
 				4F42D9D42E137A130081F4AA /* AppDelegate.swift in Sources */,
 				4F93C37C2E2476520007FCD5 /* AppCoordinator.swift in Sources */,
+				4F56129D2E31A06600E88792 /* SongSectionView.swift in Sources */,
 				4FB195EE2E28B76A0020B0DD /* SongDetailView.swift in Sources */,
 				4FBC9FDC2E220982006D11EA /* SongRepository.swift in Sources */,
 				4F6B5EE02E14C3BF00DA6534 /* HomeViewModel.swift in Sources */,
+				4F8FBD412E4B79DA0048C514 /* AudioPlayerManager.swift in Sources */,
+				4FBCB83F2E2E5CBF00248F89 /* SongCard.swift in Sources */,
 				4F42D9D62E137A290081F4AA /* SceneDelegate.swift in Sources */,
 				4FB185D32E27684000B1A36B /* SongMapper.swift in Sources */,
+				4FBCB83A2E2C6A9400248F89 /* RecentSearchStorie.swift in Sources */,
+				4F56129F2E31A16500E88792 /* InitialViewModel.swift in Sources */,
 				4FB185D52E27686600B1A36B /* NetworkClient.swift in Sources */,
 				4FB91C682E2B6D4800A1B613 /* ImageCache.swift in Sources */,
 				4FBC9FD62E2202F0006D11EA /* SongRepositoryImpl.swift in Sources */,
 				4F42D9CD2E119D750081F4AA /* ConsoleLogger.swift in Sources */,
 				4FBC9FD92E220407006D11EA /* FetchSongsUseCase.swift in Sources */,
 				4FB91C6A2E2B6D5E00A1B613 /* ImageLoader.swift in Sources */,
+				4FBCB8352E2C66D100248F89 /* SplashView.swift in Sources */,
 				4F02C3DC2E03052600594AC4 /* spotifyCloneApp.swift in Sources */,
 				4FB185D12E27681800B1A36B /* SongResponseDTO.swift in Sources */,
 				4F42D9DC2E137D620081F4AA /* HomeView.swift in Sources */,
@@ -695,7 +741,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = startup.spotifyClone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelaniceto.spotifyClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -728,7 +774,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = startup.spotifyClone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelaniceto.spotifyClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
